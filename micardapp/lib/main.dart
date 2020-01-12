@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-void main ()=>runApp(new MyApp());
+void main ()=> runApp(new MyApp());
 class MyApp extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.teal,
+        backgroundColor: Colors.teal.shade500,
         body: SafeArea(child: Column(
+
          
           children: <Widget>[
             SizedBox(
-              height: 40,
+              height: 50,
             ),
             CircleAvatar(
               radius: 80,
@@ -32,7 +33,8 @@ class MyApp extends StatelessWidget {
             fontSize: 30),
             ),
             SizedBox(
-              height: 3,
+              height: 5,
+          
             ),
 
             //tagline
@@ -42,70 +44,90 @@ class MyApp extends StatelessWidget {
             fontSize: 20,
             fontWeight: FontWeight.normal,
             fontFamily: 'SourceSansPro-Regular',letterSpacing: 2.5),),
-           
-           //for phone no 
-
-            Card(
-             // padding: EdgeInsets.all(10), card doesnt offer padding but rest all fine in place of container
-              color: Colors.white,
-              margin: EdgeInsets.symmetric(horizontal: 25,vertical: 10),
-              child: new Padding(
-                padding: EdgeInsets.all(10),
-                child: Row(
-                children: <Widget>[
-                Icon(Icons.phone,
-                color: Colors.teal,),
-                SizedBox(
-              width: 5,
-            ),
-            Divider(
-            color: Colors.teal.shade100,
+            SizedBox(
+              height: 10,
+              width: 180,
+              child:  //for phone no  in box
+           Divider(
+        height: 20,
+  color: Colors.teal.shade200,
+),
             ),
            
-                Text("+91 9818514324",style: TextStyle(color: Colors.teal[700],fontFamily: 'SourceSansPro-Regular',fontSize: 20),)
-                ],
-              ),
-              )
-            ),
-
-            //email add
-
-            Card(
-              color: Colors.white,
-              margin: EdgeInsets.symmetric(horizontal: 25,vertical: 10),
-              //padding:  EdgeInsets.all(10),
-             child: Padding(                      //new class padding haveproperty of padding and pass a child as row/columb
-               padding: EdgeInsets.all(10),
-               child: Row(
-               children: <Widget>[
-                 Icon(Icons.email,color: Colors.teal[700],
-                 ),
-                 SizedBox(
-                   width: 10,
-                 ),
-                Text("swarajroutray961@gmail.com",style: TextStyle(color: Colors.teal[700],fontFamily: 'SourceSansPro-Regular',fontSize: 20)),
-               SizedBox(height: 20,) ,
-
-
-                 
-               ],
-               
-
-             ),
-             )
-            )
-            
-            
-        
           
+             Card(
+                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+                 child: ListTile(
+                  leading: Icon(
+                    Icons.phone,
+                    color: Colors.black87,
+                  ),
+                  title: Text(
+                    '+919818514324',
+                    style: TextStyle(
+                      color: Colors.teal.shade700,
+                      fontFamily: 'SourceSansPro',
+                      fontSize: 20.0,
+                    ),
+                  ),
+                )),
+                //for email
+            Card(
+                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+                child: ListTile(
+                  leading: Icon(
+                    Icons.email,
+                    color: Colors.black87,
+                  ),
+                  title: Text(
+                    'swarajroutray961@gmail.com',
+                    style: TextStyle(
+                        fontSize: 20.0,
+                        color: Colors.teal.shade700,
+                        fontFamily: 'SourceSansPro'),
+                  ),
+                )),
+                Card(
+                  margin: EdgeInsets.symmetric(horizontal: 25,vertical: 10),
+                  child: ListTile(leading: SvgPicture.asset("assets/iconmonstr-github-1.svg"),
+                   
+                  
+                  title: Text(
+                    'GitHub : @swaraj961',
+                    style: TextStyle(
+                        fontSize: 20.0,
+                        color: Colors.teal.shade700,
+                        fontFamily: 'SourceSansPro'),
+                  ),
+                ),
+
+                  ),
+
+                  Card(
+                    margin: EdgeInsets.symmetric(horizontal: 25,vertical: 10),
+                    child: ListTile( 
+                      leading: SvgPicture.asset("assets/linkedin-3.svg"),
+                     title: Text("linkedin : @swaraj961",style:TextStyle(
+                        fontSize: 20.0,
+                        color: Colors.teal.shade700,
+                        fontFamily: 'SourceSansPro'),
+                        ),
+
+
+              
+
+                    ),
+                  )
           ],
-        )
-        
-          ),
-        ),
-        
-      );
-      
+                ),
+
+
+        ), 
+      ),
+    ); 
+             
+          
+         
     
       
     
