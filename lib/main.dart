@@ -4,8 +4,8 @@ import 'LoadURL/mail.dart';
 import 'LoadURL/phone.dart';
 import 'LoadURL/github.dart';
 import 'LoadURL/linkedin.dart';
-
-
+import 'constant.dart';
+import 'LoadURL/cv.dart';
 
 void main() => runApp(new MyApp());
 
@@ -15,17 +15,13 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-
- @override
+  @override
   void initState() {
-    
     super.initState();
-   
   }
-   
+
   @override
   Widget build(BuildContext context) {
-    
     return MaterialApp(
       home: Scaffold(
         backgroundColor: Color(0xff303f9f),
@@ -34,7 +30,7 @@ class _MyAppState extends State<MyApp> {
           child: Column(
             children: <Widget>[
               SizedBox(
-                height: 60,
+                height: 40,
               ),
               CircleAvatar(
                 radius: 80,
@@ -77,42 +73,34 @@ class _MyAppState extends State<MyApp> {
                 child: //for phone no  in box
                     Divider(
                   height: 20,
-                  color:Color(0xff7986cb),
+                  color: Color(0xff7986cb),
                 ),
               ),
 
               GestureDetector(
-                onTap: (){
-loaddailer();
+                onTap: () {
+                  loaddailer();
                 },
-                              child: Card(
+                child: Card(
                   elevation: 15,
-                  margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+                  margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 25.0),
                   child: ListTile(
                     leading: Icon(
                       Icons.phone,
                       color: Colors.black87,
                     ),
-                    title: Text(
-                      '+919818514324',
-                      style: TextStyle(
-                        color: Color(0xff3f51b5),
-                        fontFamily: 'SourceSansPro',
-                        fontSize: 20.0,
-                      ),
-                    ),
+                    title: Text('+919818514324', style: kinfodecoration),
                   ),
                 ),
               ),
               //for email
-               GestureDetector(
-                onTap: (){
-                 loadurlgmail();
+              GestureDetector(
+                onTap: () {
+                  loadurlgmail();
                 },
-                
-                              child: Card(
+                child: Card(
                   elevation: 15,
-                  margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+                  margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 25.0),
                   child: ListTile(
                     leading: Icon(
                       Icons.email,
@@ -120,81 +108,94 @@ loaddailer();
                     ),
                     title: Text(
                       'swarajroutray961@gmail.com',
-                      style: TextStyle(
-                          fontSize: 20.0,
-                          color:Color(0xff3f51b5),
-                          fontFamily: 'SourceSansPro'),
+                      style: kinfodecoration,
                     ),
                   ),
                 ),
               ),
               GestureDetector(
-                onTap: (){
-loadurlgit();
+                onTap: () {
+                  loadurlgit();
                 },
-                              child: Card(
+                child: Card(
                   elevation: 15,
-                  margin: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+                  margin: EdgeInsets.symmetric(horizontal: 25, vertical: 8),
                   child: ListTile(
                     leading: SvgPicture.asset("assets/iconmonstr-github-1.svg"),
                     title: Text(
                       'GitHub : @swaraj961',
-                      style: TextStyle(
-                          fontSize: 20.0,
-                          color: Color(0xff3f51b5),
-                          fontFamily: 'SourceSansPro'),
+                      style: kinfodecoration,
                     ),
                   ),
                 ),
               ),
 
               GestureDetector(
-                onTap: (){
+                onTap: () {
                   loadurllinkedin();
                 },
-                              child: Card(
+                child: Card(
                   elevation: 15,
-                  margin: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+                  margin: EdgeInsets.symmetric(horizontal: 25, vertical: 8),
                   child: ListTile(
                     leading: SvgPicture.asset("assets/linkedin-3.svg"),
-                    title: Text(
-                      "linkedin : @swaraj961",
-                      style: TextStyle(
-                          fontSize: 20.0,
-                          color: Color(0xff3f51b5),
-                          fontFamily: 'SourceSansPro'),
-                    ),
+                    title:
+                        Text("linkedin : @swaraj961", style: kinfodecoration),
                   ),
                 ),
               ),
 
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 25, vertical: 13),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: <Widget>[
-                    Container(
-                      height: 140,
-                      width: 200,
-                      child: Padding(
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-                        child: Text(
-                          'B.Tech in Information Technology Usict GGSIPU - Ability to work with C++,Flutter, Dart, Ps, XD having Good knowledge in Cisco Networking -Can work well under pressure and make the best of any situation. Passionate individual with great interpersonal and communication skills.',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              fontWeight: FontWeight.w600,
-                              fontSize: 15.0,
-                              color: Color(0xff3f51b5),
-                              fontFamily: 'SourceSansPro'),
+              SafeArea(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 25, vertical: 5),
+                  child: Column(
+                    // crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: <Widget>[
+                      Container(
+                        height: 140,
+                        width: 360,
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 20, vertical: 15),
+                          child: Text(
+                            'B.Tech in Information Technology Usict GGSIPU - Ability to work with C++,Flutter, Dart, Ps, XD having Good knowledge in Cisco Networking -Can work well under pressure and make the best of any situation. Passionate individual with great interpersonal and communication skills.',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                fontSize: 15.0,
+                                color: Color(0xff3f51b5),
+                                fontFamily: 'SourceSansPro'),
+                          ),
+                        ),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10),
                         ),
                       ),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10),
+                      SizedBox(height: 7),
+                      Card(
+                        elevation: 15,
+                        color: Color(0xfee7986cb),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30)),
+                        margin:
+                            EdgeInsets.symmetric(horizontal: 30, vertical: 7),
+                        child: ListTile(
+                          title: Text(
+                            '\t\t\t\tDownload the CV',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                          onTap: () {
+                            loadurlcv();
+                          },
+                          leading: Icon(
+                            Icons.file_download,
+                            color: Colors.black,
+                          ),
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ],
@@ -204,4 +205,3 @@ loadurlgit();
     );
   }
 }
-

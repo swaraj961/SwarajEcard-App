@@ -26,6 +26,7 @@ dependencies:
   cupertino_icons: ^0.1.2
   flutter_svg: ^0.15.0
   url_launcher: ^5.4.2
+  # flutter_downloader: ^1.4.4
 
 dev_dependencies:
   flutter_test:
