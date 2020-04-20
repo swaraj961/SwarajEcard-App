@@ -132,7 +132,7 @@ class _MyAppState extends State<MyApp> {
 
               GestureDetector(
                 onTap: () {
-                  loadurllinkedin();
+                loadurllinkedin();
                 },
                 child: Card(
                   elevation: 15,
